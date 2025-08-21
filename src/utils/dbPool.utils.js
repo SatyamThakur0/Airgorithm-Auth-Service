@@ -18,6 +18,10 @@ export function getPool() {
             user: DB_USER,
             password: DB_PASSWORD,
             database: DB_NAME,
+            // ssl: {
+            //     require: true,
+            //     rejectUnauthorized: false, // important for Neon
+            // },
         });
 
         if (NODE_ENV === "production") {

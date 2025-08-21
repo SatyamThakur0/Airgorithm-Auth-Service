@@ -10,7 +10,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
     cors({
-        origin: [`${process.env.FRONTEND_URL}`,"http://localhost:5174"],
+        origin: [
+            `${process.env.FRONTEND_URL}`,
+            `${process.env.ADMIN_PANEL_URL}`,
+        ],
         credentials: true,
     })
 );
