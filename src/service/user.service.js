@@ -1,7 +1,7 @@
 import UserRepository from "../repository/user.repository.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { ApiError, ApiResponse } from "../utils/api.utils.js";
+import { ApiError } from "../utils/api.utils.js";
 import { config } from "dotenv";
 config();
 
