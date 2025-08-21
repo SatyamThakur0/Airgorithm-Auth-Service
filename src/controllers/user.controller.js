@@ -72,8 +72,8 @@ class UserController {
         try {
             res.clearCookie("token", {
                 httpOnly: true,
-                sameSite: "lax",
-                secure: process.env.NODE_ENV === "production",
+                sameSite: "none",
+                secure: true,
             });
             return res
                 .status(200)
@@ -99,8 +99,8 @@ class UserController {
                 .status(200)
                 .cookie("token", result.token, {
                     httpOnly: true,
-                    sameSite: "lax",
-                    secure: process.env.NODE_ENV === "production",
+                    sameSite: "none",
+                    secure: true,
                 })
                 .json(new ApiResponse(true, "Login successful", 200, result));
         } catch (error) {
@@ -114,8 +114,8 @@ class UserController {
         try {
             res.clearCookie("token", {
                 httpOnly: true,
-                sameSite: "lax",
-                secure: process.env.NODE_ENV === "production",
+                sameSite: "none",
+                secure: true,
             });
             return res
                 .status(200)
