@@ -1,0 +1,29 @@
+{
+  "name": "auth_service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js",
+    "create:db": "node ./src/config/create_db.config.js",
+    "drop:db": "node ./src/config/drop_db.config.js",
+    "migrate": "node-pg-migrate"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "pgtools": "^1.0.1"
+  },
+  "devDependencies": {
+    "node-pg-migrate": "^8.0.3",
+    "nodemon": "^3.1.10"
+  }
+}
