@@ -10,7 +10,7 @@ class UserService {
     jwtSecret;
     constructor() {
         this.userRepository = new UserRepository();
-        this.jwtSecret = process.env.JWT_SECRET || "default_jwt_secret";
+        this.jwtSecret = process.env.JWT_SECRET;
     }
 
     register = async (user) => {
