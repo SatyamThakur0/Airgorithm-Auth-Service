@@ -26,8 +26,8 @@ class UserController {
                 .status(201)
                 .cookie("token", response.token, {
                     httpOnly: true,
-                    sameSite: "lax",
-                    secure: process.env.NODE_ENV === "production",
+                    sameSite: "none",
+                    secure: true,
                 })
                 .json(
                     new ApiResponse(
@@ -57,8 +57,8 @@ class UserController {
                 .status(200)
                 .cookie("token", result.token, {
                     httpOnly: true,
-                    sameSite: "lax",
-                    secure: process.env.NODE_ENV === "production",
+                    sameSite: "none",
+                    secure: true,
                 })
                 .json(new ApiResponse(true, "Login successful", 200, result));
         } catch (error) {

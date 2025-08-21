@@ -20,7 +20,7 @@ export function getPool() {
             database: DB_NAME,
             ssl: {
                 require: true,
-                rejectUnauthorized: false, // important for Neon
+                rejectUnauthorized: false,
             },
         });
 
