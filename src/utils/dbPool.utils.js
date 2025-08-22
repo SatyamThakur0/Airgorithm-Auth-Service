@@ -9,7 +9,7 @@ import {
 } from "../config/env.config.js";
 
 let pool = null;
-
+const isProduction = process.env.NODE_ENV === "production";
 export function getPool() {
     if (!pool) {
         pool = new Pool({
@@ -18,10 +18,9 @@ export function getPool() {
             user: DB_USER,
             password: DB_PASSWORD,
             database: DB_NAME,
-            ssl: {
-                require: true,
-                rejectUnauthorized: false,
-            },
+            ssl: isProduction
+                ? { require: true, rejectUnauthorized: false }
+                : false,
         });
 
         if (NODE_ENV === "production") {
