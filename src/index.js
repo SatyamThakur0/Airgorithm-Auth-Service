@@ -28,8 +28,8 @@ app.use("/auth", router);
 app.listen(PORT, () => {
     console.log(`Auth Service is running on PORT : ${PORT}`);
 });
-nodeCron.schedule("*/5 * * * * *", async () => {
-    let res = await fetch(`${process.env.SELF}`);
-    res = await res.json();
-    console.log(res.message, " : ", new Date().getSeconds());
-});
+// nodeCron.schedule("*/5 * * * * *", async () => {
+//     let res = await fetch(`${process.env.SELF}`);
+//     res = await res.json();
+//     console.log(res.message, " : ", new Date().getSeconds());
+// });
